@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --green:#16a085;
+    --black:#444;
+    --light-color:#777;
+    --box-shadow:.5rem .5rem 0 rgba(22, 160, 133, .2);
+    --text-shadow:.4rem .4rem 0 rgba(0, 0, 0, .2);
+    --border:.2rem solid var(--green);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-transform:capitalize;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    background: #1c92d2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.fight{
+    width:100%;
+    
+}
+
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+.header{
+    padding: 2rem 9%;
+    position: fixed;
+    top:0 ; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow:0.5rem 1.5rem 0 rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+.header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+    .header .logo i{
+        color: var(--green);
+    }
+
+    .header .navbar a{
+        font-size: 1.7rem;
+        color: var(--light-color);
+        margin-left: 2rem;
+    }    
+    .header .navbar a:hover{
+        color: var(--green);
+    }
+    #menu-btn{
+        font-size: 2.5rem;
+        border-radius: .5rem;
+        background: #eee;
+        color: var(--green);
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+.fightDia{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width:991px){
+
+        html{
+            font-size: 55%;
+        }
+
+        .header{
+            padding: 2rem;
+
+        }
+
+    }
+
+    @media (max-width:768px){
+
+    }
+
+    @media (max-width:450px){
+
+        html{
+            font-size: 50%;
+        }
+
+    }
+
+
+
+     /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f100;
+    left: -10%;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+/* Links inside the dropdown */
+  .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  
+    
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #a0a5a5;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: transparent}

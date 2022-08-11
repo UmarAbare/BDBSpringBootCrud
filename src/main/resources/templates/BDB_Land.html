@@ -1,0 +1,82 @@
+<!DOCTYPE html>>
+
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+        <title>Beat Da'Betes | Start winning your fight!</title>
+ <!-- LINK TO CSS IS BELOW -->
+        <link rel="stylesheet" type="text/css" href="/CSS/BDB_Land.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/Images/beat logo.png" />
+</head>
+
+<header class="header">
+    
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> Beat Da'Betes. </a>
+
+    <nav class="navbar">
+        <a href= "land"> home</a>
+        <a href= "#about">about</a>
+        <a href= "blog">blogs</a>
+        <div class="dropdown">
+            <a href= "#recipes">recipes</a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/watch?v=29VT9hbIbJE">Tilapia Meal</a>
+                <a href="#">Caesar Salad</a>
+                <a href="#"> Chicken and Vegetable </a>
+                <a href="#">Cauliflower Rice</a>
+            </div>   
+         </div>
+        <a href= "#exercise">exercise</a>
+        <a href= "#shop links">shop links</a>
+        <a href= "#testimonials">testimonials</a>
+        <a href= "list">Admin</a>
+
+    </nav>
+
+    <div did="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+
+<body>
+    
+  <img class="fight" src="pexels-artem-podrez-6823669.jpg" alt="fight diabetes">
+
+    
+    <div class="banner">
+        
+        
+    
+        <div class="content">
+            <img class="fightDia" src="${pageContext.request.contextPath}/resources/BDBImages/fightDia.jpg" alt="">
+            <h1>Need Help Controlling Your Diabetes? 
+                <br>LooK No Further!
+            </h1>
+            <p> Call: 1-800-BEAT<br> Email: beat@da'betes.net | Gain Control Now!</p>
+            
+            <div>
+            	 <a href="create">
+                <button type="button"><span></span> Create Account</button>
+                 </a>
+                <a href="log">
+                    <button type="button"><span></span>Log In</button>
+                </a> 
+                <a href="admin">
+                    <button type="button"><span></span> Admin Log In</button>
+                </a> 
+            </div>
+
+        </div>
+    
+        
+    </div>
+    
+
+</body>
+
+</html>
+
+

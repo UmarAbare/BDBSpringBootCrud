@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html>>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>Beat Da'Betes | Start winning your fight!</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/BDBCSS/BDB_Land.css">
+        <link rel="shortcut icon" type="image/x-icon" href="beat logo.png" />
+
+        
+</head>
+<header class="header">
+    
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> Beat Da'Betes. </a>
+
+    <nav class="navbar">
+        <a href= "land"> home</a>
+        <a href= "#about">about</a>
+        <a href= "blog">blogs</a>
+        <div class="dropdown">
+            <a href= "#recipes">recipes</a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/watch?v=29VT9hbIbJE">Tilapia Meal</a>
+                <a href="#">Caesar Salad</a>
+                <a href="#"> Chicken and Vegetable </a>
+                <a href="#">Cauliflower Rice</a>
+            </div>   
+         </div>
+        <a href= "#exercise">exercise</a>
+        <a href= "#shop links">shop links</a>
+        <a href= "#testimonials">testimonials</a>
+        <a href= "list">Admin</a>
+        <a href= "logout">Logout</a>
+
+    </nav>
+
+    <div did="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+
+
+<body>
+    
+  <img class="fight" src="pexels-artem-podrez-6823669.jpg" alt="fight diabetes">
+
+    
+    <div class="banner">
+        
+        
+    
+        <div class="content">
+            <img class="fightDia" src="${pageContext.request.contextPath}/resources/BDBImages/fightDia.jpg" alt="">
+            <h1 style="font-size: 24px; position:relative;top: 80%; left: 35% ">Beat Da'Betes Subscriber List
+                
+            </h1>
+            
+    <!--Your Java Collection will go here -->
+    <div id="content">
+              
+          <table class="table table-hover" style="font-size: 18px; position:relative; top: 100%; left: 20%;">
+          <thead>
+              <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+              </tr>
+              </thead>
+              <tbody>
+              <c:forEach var="tempPatient" items="${users}">
+              
+              <!-- construct an "update" link with user id -->
+					<c:url var="updateLink" value="/bdb/update">
+						<c:param name="usersId" value="${tempPatient.id}" />
+					</c:url>					
+
+					<!-- construct an "delete" link with customer id -->
+					<c:url var="deleteLink" value="/bdb/delete">
+						<c:param name="usersId" value="${tempPatient.id}" />
+					</c:url>
+                  
+                  <tr>
+                      <td> ${tempPatient.firstName} </td>
+                      <td> ${tempPatient.lastName} </td>
+                      <td> ${tempPatient.email} </td>
+                 	<td>
+							<!-- display the update link -->
+							<a href="${updateLink}">Update</a>
+							|
+							<a href="${deleteLink}"
+							   onclick="if (!(confirm('Are you sure you want to delete this user?'))) return false">Delete</a>
+						</td>
+                 	
+                  </tr>
+              
+              </c:forEach>
+              </tbody>
+          </table>
+    </div>
+
+        </div>
+    
+        
+    </div>
+    
+
+</body>
+
+</html>
+
+

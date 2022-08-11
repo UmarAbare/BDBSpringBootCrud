@@ -1,0 +1,89 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org"><head>
+
+<title>Create Form Design</title>
+    <link rel="stylesheet" type="text/css" href="CSS/BDB_Create.css">
+<link rel="stylesheet" type="text/css" href="CSS/BDB_Land.css">
+</head>
+
+<header class="header">
+    
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> Beat Da'Betes. </a>
+
+    <nav class="navbar">
+        <a href= "land"> home</a>
+        <a href= "#about">about</a>
+        <a href= "blog">blogs</a>
+        <div class="dropdown">
+            <a href= "#recipes">recipes</a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/watch?v=29VT9hbIbJE">Tilapia Meal</a>
+                <a href="#">Caesar Salad</a>
+                <a href="#"> Chicken and Vegetable </a>
+                <a href="#">Cauliflower Rice</a>
+            </div>   
+         </div>
+        <a href= "#exercise">exercise</a>
+        <a href= "#shop links">shop links</a>
+        <a href= "#testimonials">testimonials</a>
+        <a href= "list">Admin</a>
+
+    </nav>
+
+    <div did="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+    
+<body style="background: url('Images/StopDia2.jpg');background-size: cover;
+    background-position: center;
+    ">
+
+    <div class="loginbox">
+        <img src="Images/beat logo.png" class="beat">
+        <h1>Create Account Here</h1>
+       
+       <!-- connects to saveUsers Method and model attribute -->
+       
+        <form th:action="@{/process_register}"  method="post" th:object = "${user}">
+        	
+            <p>First name</p>
+            <input type="text" th:field="*{firstName}"  required
+						minlength="2" maxlength="20"  placeholder="Enter first name">
+            <p>Last name</p>
+            <input type="text" th:field="*{lastName}" required
+             			minlength="2" maxlength="20" placeholder="Enter Last name">
+            <p>Email</p>
+            <input type="email" th:field="*{email}" placeholder="Enter Email">
+            <p>Password</p>
+            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" title="Password must contain: Minimum 6 characters at least 1 Alphabet and 1 Number"
+
+             id= pass th:field="*{password}" placeholder="Enter Password">
+            <p>Confirm Password</p>
+            <input type="password" id=passConfirmed placeholder="Re-enter Password">
+            <p>DOB</p>
+            <input type="date" th:field="*{dob}" placeholder="Enter Birthdate">
+            <input type="submit" name="" value="Confirm">
+            
+            <!-- this is a java script conditional statement checking if the value of pass word and confirmed pass word are the same by comparing there element id -->
+		<script type="text/javascript">
+    		window.onload = function () {
+       		var pass = document.getElementById("pass");
+        	var passConfirmed = document.getElementById("passConfirmed");
+        	pass.onchange = ConfirmPassword;
+        	passConfirmed.onkeyup = ConfirmPassword;
+       		function ConfirmPassword() {
+            	passConfirmed.setCustomValidity("");
+            	if (pass.value != passConfirmed.value) {
+                	passConfirmed.setCustomValidity("Passwords do not match.");
+            		}
+        		}
+    		}
+		</script>
+            
+        </form>
+    </div>
+</body>
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</html>

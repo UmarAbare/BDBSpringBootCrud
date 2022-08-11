@@ -1,0 +1,68 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/BDBCSS/BDB_Log.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/BDBCSS/BDB_Land.css">
+</head>
+
+<header class="header">
+    
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> Beat Da'Betes. </a>
+
+    <nav class="navbar">
+        <a href= "land"> home</a>
+        <a href= "#about">about</a>
+        <a href= "blog">blogs</a>
+        <div class="dropdown">
+            <a href= "#recipes">recipes</a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/watch?v=29VT9hbIbJE">Tilapia Meal</a>
+                <a href="#">Caesar Salad</a>
+                <a href="#"> Chicken and Vegetable </a>
+                <a href="#">Cauliflower Rice</a>
+            </div>   
+         </div>
+        <a href= "#exercise">exercise</a>
+        <a href= "#shop links">shop links</a>
+        <a href= "#testimonials">testimonials</a>
+        <a href= "list">Admin</a>
+
+    </nav>
+
+    <div did="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+
+<body style="background: url('${pageContext.request.contextPath}/resources/BDBImages/StopDia2.jpg');background-size: cover;
+    background-position: center;
+    ">
+    <div class="loginbox">
+        <img src="${pageContext.request.contextPath}/resources/BDBImages/beat logo.png" class="beat">
+        <h1>Login Here</h1>
+        <%
+        	String error = (String) request.getAttribute("error");
+ 			if (error != null &&error.equals("true"))
+ 				{
+ 					out.println("<h4 style=\"color:red; font-size: 10px;  position: absolute; top:30%; \">Username / Password is Incorrect. Please try again.</h4>");
+ 				}
+			 %>
+        
+        
+        <form name='loginForm' action="<c:url value='j_spring_security_check' />" method='POST' >
+            <p>User name</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="" value="Login">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <a href="#">Lost your password?</a><br>
+            <a href="create">Don't have an account?</a>
+
+        </form>
+    </div>
+</body>
+
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</html>
